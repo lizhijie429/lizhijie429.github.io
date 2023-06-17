@@ -1,3 +1,11 @@
+/**
+ * @description 自动化编译发布文档
+ * @author lizhijie429
+ * @param {String} commit - Git commit 命令参数，默认：'Auto-commit'
+ * @param {String} origin - 远程仓库别名，默认：'origin'
+ * @param {Boolean} docs - 远程仓库别名，默认：false
+ */
+
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const minimist = require('minimist')
@@ -29,12 +37,8 @@ const command = {
 for (let index = 0; index < Object.keys(command).length; index++) {
   const key = Object.keys(command)[index]
   const value = command[key]
-  // 如果传入参数 --docs 则不执行打包及发布过程
-  if (
-    Object.keys(argv).includes('docs') &&
-    argv['docs'] &&
-    (key === 'pushDocs' || key === 'build')
-  ) {
+  // 如果传入参数 '--docs' 则执行打包及发布过程
+  if (!argv['docs'] && (key === 'pushDocs' || key === 'build')) {
     continue
   }
   if (shell.exec(value).code !== 0) {
