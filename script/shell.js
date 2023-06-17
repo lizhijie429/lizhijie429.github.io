@@ -4,6 +4,15 @@ let shell = require('shelljs')
 let name = process.argv[2] || 'Auto-commit'
 
 //检查控制台是否以运行`git `开头的命令
+if (!shell.which('pnpm')) {
+  //在控制台输出内容
+  shell.echo('Sorry, this script requires pnpm')
+  shell.exit(1)
+} else {
+  shell.echo('pnpm ……')
+}
+
+//检查控制台是否以运行`git `开头的命令
 if (!shell.which('git')) {
   //在控制台输出内容
   shell.echo('Sorry, this script requires git')
