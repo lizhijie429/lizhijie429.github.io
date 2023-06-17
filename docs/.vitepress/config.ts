@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "前端学习笔记",
+  title: "WEB前端李志杰",
   description: "A VitePress Site",
   outDir: './public',
   themeConfig: {
