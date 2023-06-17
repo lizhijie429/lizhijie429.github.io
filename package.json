@@ -17,8 +17,10 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@types/minimist": "^1.2.2",
     "@types/shelljs": "^0.8.12",
     "@vitejs/plugin-vue": "^4.1.0",
+    "minimist": "^1.2.8",
     "rimraf": "^5.0.1",
     "shelljs": "^0.8.5",
     "vite": "^4.3.9",
