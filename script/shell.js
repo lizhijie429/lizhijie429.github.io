@@ -18,7 +18,11 @@ if (exec(`git commit -am "${name}"`).code !== 0) {
   echo('Error: Git commit failed')
   exit(1)
 }
+if (exec('git push origin main').code !== 0) {
+  echo('Error: Git push Branch main')
+  exit(1)
+}
 if (exec('git subtree push --prefix docs/public origin docs').code !== 0) {
-  echo('Error: Git commit failed')
+  echo('Error: Git push Branch docs')
   exit(1)
 }
