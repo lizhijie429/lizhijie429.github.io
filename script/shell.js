@@ -10,7 +10,6 @@ if (!shell.which('git')) {
   shell.echo('Sorry, this script requires git')
   shell.exit(1)
 }
-
 if (exec('git add .').code !== 0) {
   echo('Error: Git add failed')
   exit(1)
@@ -19,7 +18,7 @@ if (exec(`git commit -am "${name}"`).code !== 0) {
   echo('Error: Git commit failed')
   exit(1)
 }
-// if (exec('git push').code !== 0) {
-//     echo('Error: Git commit failed')
-//     exit(1)
-// }
+if (exec('git subtree push --prefix docs/public origin docs').code !== 0) {
+  echo('Error: Git commit failed')
+  exit(1)
+}
