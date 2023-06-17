@@ -23,10 +23,11 @@ const command = [
   'git subtree push --prefix docs/public origin docs'
 ]
 // 执行脚本
-command.forEach((item) => {
-  if (shell.exec(item).code !== 0) {
+for (let index = 0; index < command.length; index++) {
+  const element = command[index]
+  if (shell.exec(element).code !== 0) {
     //在控制台输出内容
-    shell.echo(`Error: ${item} failed`)
+    shell.echo(`Error: ${element} failed`)
     shell.exit(1)
   }
-})
+}
