@@ -1,0 +1,21 @@
+:root {
+  --vp-c-brand: var(--el-color-primary);
+  --vp-c-brand-light: var(--el-color-primary-light-5);
+  --vp-c-brand-lighter: var(--el-color-primary-light-3);
+  --vp-c-brand-dark: var(--el-color-primary);
+  --vp-c-brand-darker: var(--el-color-primary-dark-2);
+
+  --el-color-primary: #409eff;
+  --el-color-primary-light-3: #79bbff;
+  --el-color-primary-light-5: #a0cfff;
+  --el-color-primary-light-7: #c6e2ff;
+  --el-color-primary-light-8: #d9ecff;
+  --el-color-primary-light-9: #ecf5ff;
+  --el-color-primary-dark-2: #337ecc;
+}
+.main > .name {
+  margin-bottom: 30px;
+}
+.main > .text {
+  margin-bottom: 10px;
+}
