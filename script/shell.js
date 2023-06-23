@@ -37,6 +37,9 @@ const command = {
 for (let index = 0; index < Object.keys(command).length; index++) {
   const key = Object.keys(command)[index]
   const value = command[key]
+  if (argv['noBuild'] && key === 'build') {
+    continue
+  }
   // 如果传入参数 '--docs' 则执行打包及发布过程
   if (!argv['docs'] && (key === 'pushDocs' || key === 'build')) {
     continue
